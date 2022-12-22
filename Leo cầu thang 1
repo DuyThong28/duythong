@@ -1,0 +1,32 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int n, cnt;
+
+void solve(int x)
+{
+    if (x==n)
+    {
+        cnt ++;
+        return;
+    }
+    if (x>n)
+    {
+        return;
+    }
+    solve(x+1);
+    solve(x+2);
+}
+
+int main() 
+{
+    cin >> n;
+    cnt =0;
+    solve(0);
+    cout << cnt;
+    return 0;
+}
